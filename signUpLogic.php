@@ -9,7 +9,6 @@ include_once('config.php');
 		$name = $_POST['name'];
 		$lastname = $_POST['lastname'];
 		$email = $_POST['email'];
-        $phoneNumber = $_POST['phoneNumber'];
         $password = $_POST['password'];
 
 		$tempPass = $_POST['password'];
@@ -19,14 +18,14 @@ include_once('config.php');
 
 
 
-		if(empty($name) || empty($lastname) || empty($email) || empty($password) || empty($phoneNumber) )
+		if(empty($name) || empty($lastname) || empty($email) || empty($password) )
 		{
 			echo "You have not filled in all the fields.";
 		}
 		else
 		{
 
-			$sql = "INSERT INTO users(name,lastname,email,password,phoneNumber ) VALUES (:name, :lastname, :email, :password, :phoneNumber)";
+			$sql = "INSERT INTO users(name,lastname,email,password) VALUES (:name, :lastname, :email, :password)";
 
 			$insertSql = $conn->prepare($sql);
 			
@@ -35,7 +34,7 @@ include_once('config.php');
 			$insertSql->bindParam(':username', $username);
 			$insertSql->bindParam(':email', $email);
 			$insertSql->bindParam(':password', $password);
-            $insertSql->bindParam(':phoneNumber', $phoneNumber);
+         
 
 
 			$insertSql->execute();

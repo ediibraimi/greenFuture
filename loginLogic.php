@@ -17,7 +17,7 @@
 		}
 		else{
 
-			$sql = "SELECT id, name, lastname, email, password,phoneNumber, is_admin FROM users WHERE name=:name";
+			$sql = "SELECT id, name, lastname, email, password,phoneNumber  FROM users WHERE name=:name";
 
 			$selectUser = $conn->prepare($sql);
 
@@ -42,9 +42,8 @@
 					$_SESSION['lastname'] = $data['lastname'];
 					$_SESSION['email'] = $data['email'];
 					$_SESSION['phoneNumber'] = $data['phoneNumber'];
-                    $_SESSION['is_admin'] = $data['is_admin'];
-
-					header('Location: dashboard.php');
+                    
+					header('Location: index.php');
 				}
 				else{
 					echo "The password is not valid
