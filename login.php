@@ -10,51 +10,22 @@
 	<link rel="manifest" href="/docs/5.1/assets/img/favicons/manifest.json">
 	<link rel="mask-icon" href="/docs/5.1/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
 	<link rel="icon" href="/docs/5.1/assets/img/favicons/favicon.ico">
-	<style>
 
-		html,
-	body {
-	  height: 100%;
-	}
-
-	body {
-	  display: flex;
-	  align-items: center;
-	  padding-top: 40px;
-	  padding-bottom: 40px;
-	  background-color: #f5f5f5;
-	}
-
-	.form-signin {
-	  width: 100%;
-	  max-width: 330px;
-	  padding: 15px;
-	  margin: auto;
-	}
-
-	.form-signin .checkbox {
-	  font-weight: 400;
-	}
-
-	.form-signin .form-floating:focus-within {
-	  z-index: 2;
-	}
-
-	.form-signin input[type="email"] {
-	  margin-bottom: -1px;
-	  border-bottom-right-radius: 0;
-	  border-bottom-left-radius: 0;
-	}
-
-	.form-signin input[type="password"] {
-	  margin-bottom: 10px;
-	  border-top-left-radius: 0;
-	  border-top-right-radius: 0;
-	}
-	</style>
+	
 </head>
+<style>
+	body {
+    background-color: #f4f4f4;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+</style>
 <body class="text-center">
-<!-- Creating a from which will post some data in loginLogic.php file -->
 <main class="form-signin">
   <form action="loginLogic.php" method="post">
     <img class="mb-4" src="https://getbootstrap.com/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
@@ -75,7 +46,7 @@
       </label>
     </div>
     <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit">Sign in</button>
-	<p>Already have an account:<a href="signUp.php" >Sign up</a> </p>
+	<p>Don't have an account:<a href="signUp.php" >Sign up</a> </p>
   </form>
 </main>
 
