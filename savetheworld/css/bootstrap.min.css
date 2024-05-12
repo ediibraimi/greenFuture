@@ -578,7 +578,7 @@ progress {
   .container-lg,
   .container-xl,
   .container-fluid {
-    max-width: 1320px;
+    /* max-width: 1320px; */
   }
 }
 .row {

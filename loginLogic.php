@@ -10,7 +10,7 @@ if (isset($_POST['submit'])) {
 	if (empty($name) || empty($password)) {
 		echo "Please fill in all fields";
 	} else {
-		$sql = "SELECT id, name, lastname, email, password FROM users WHERE name=:name";
+		$sql = "SELECT id, name, lastname, email,password, is_admin FROM users WHERE name=:name";
 
 		$selectUser = $conn->prepare($sql);
 
@@ -30,6 +30,7 @@ if (isset($_POST['submit'])) {
 				$_SESSION['lastname'] = $data['lastname'];
 				$_SESSION['email'] = $data['email'];
 				$_SESSION['phoneNumber'] = $data['phoneNumber'];
+				$_SESSION['is_admin'] = $data['is_admin'];
 
 				header('Location: savetheworld/index.php');
 			} else {

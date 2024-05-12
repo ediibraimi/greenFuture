@@ -11,7 +11,7 @@ if ($_SESSION['is_admin'] != 'true') {
   header("Location: index.php");
 }
 
-$sql = "SELECT * FROM users";
+$sql = "SELECT * FROM contact";
 
 $selectUsers = $conn->prepare($sql);
 $selectUsers->execute();
@@ -48,18 +48,19 @@ $users_data = $selectUsers->fetchAll();
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php">Home Page</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="dashboard.php">Users Page</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contactList.php">Contact Page</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="donatorList.php">Donator Page</a>
-                    </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php">Home Page</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="dashboard.php">Users Page</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contactList.php">Contact Page</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="donatorList.php">Donator Page</a>
+                </li>
+
         </ul>
         <div class="d-flex">
           <a href="logout.php">
@@ -78,16 +79,15 @@ $users_data = $selectUsers->fetchAll();
     </div>
 
     <div class="container" style="width: 90%;">
-      <h2 class="text-green">Users</h2>
+      <h2 class="text-green">Contact</h2>
       <table class=" table table-striped table-sm shadow">
         <thead class="bg-dark text-white">
           <tr>
             <th class="bg-green text-dark ps-3">Id</th>
             <th class="bg-green text-dark ps-3">Name</th>
-            <th class="bg-green text-dark ps-3">Lastname</th>
             <th class="bg-green text-dark ps-3">Email</th>
-            <th class="bg-green text-dark ps-3">Update</th>
-            <th class="bg-green text-dark ps-3">Delete</th>
+            <th class="bg-green text-dark ps-3">Subject</th>
+            <th class="bg-green text-dark ps-3">Message</th>
           </tr>
         </thead>
         <tbody>
@@ -95,10 +95,9 @@ $users_data = $selectUsers->fetchAll();
             <tr>
               <td class="bg-light ps-3"> <?php echo $user_data['id']; ?> </td>
               <td class="bg-light ps-3"> <?php echo $user_data['name']; ?> </td>
-              <td class="bg-light ps-3"> <?php echo $user_data['lastname']; ?> </td>
               <td class="bg-light ps-3"> <?php echo $user_data['email']; ?> </td>
-              <td class="bg-light ps-3"> <a class="btn btn-dark bg-green border-0 text-dark" style="text-decoration: none;" href="editUsers.php?id=<?= $user_data['id']; ?>">Update</a> </td>
-              <td class="bg-light ps-3"> <a class="btn btn-outline-danger text-danger red-button" style=" text-decoration: none;" href="deleteUsers.php?id=<?= $user_data['id']; ?>">Delete</a> </td>
+              <td class="bg-light ps-3"> <?php echo $user_data['subject']; ?> </td>
+              <td class="bg-light ps-3"> <?php echo $user_data['messages']; ?> </td>
             </tr>
           <?php } ?>
         </tbody>

@@ -44,32 +44,7 @@
 
         <!-- Navbar & Hero Start -->
         <div class="container-fluid position-relative p-0">
-            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-                <a href="" class="navbar-brand p-0">
-                    <h1 class="m-0"><i class="fa fa-server me-3"></i>Save the world</h1>
-                    <!-- <img src="img/logo.png" alt="Logo"> -->
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto py-0">
-                        <a href="index.php" class="nav-item nav-link">Home</a>
-                        <a href="about.php" class="nav-item nav-link">About</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu m-0">
-                                <a href="team.html" class="dropdown-item">Our Team</a>
-                                <a href="testimonial.php" class="dropdown-item">Testimonial</a>
-                                <a href="comparison.php" class="dropdown-item">Comparison</a>
-                            </div>
-                        </div>
-                        <a href="contact.php" class="nav-item nav-link active">Contact</a>
-                    </div>
-                    <butaton type="button" class="btn text-secondary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
-                    <a href="" class="btn btn-secondary py-2 px-4 ms-3">Register</a>
-                </div>
-            </nav>
+            <?php include_once('header.php'); ?>
 
             <div class="container-fluid py-5 bg-primary hero-header mb-5">
                 <div class="container my-5 py-5 px-lg-5">
@@ -115,7 +90,7 @@
             <div class="container px-lg-5">
                 <div class="section-title position-relative text-center mx-auto mb-5 pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <h1 class="mb-3">Contact For Any Query</h1>
-                    <p class="mb-1">Vero justo sed sed vero clita amet. Et justo vero sea diam elitr amet ipsum eos ipsum clita duo sed. Sed vero sea diam erat vero elitr sit clita.</p>
+                    <p class="mb-1">Feel free to contact us :) Lets make the world great together.</p>
                 </div>
                 <div class="row g-5">
                     <div class="col-lg-7 col-md-6">

@@ -333,6 +333,8 @@ h6,
         left 50% bottom 0,
         top center;
     background-repeat: no-repeat;
+    background-size: 100% !important;
+    width: 100% !important;
 }
 
 .footer p {
@@ -400,4 +402,12 @@ h6,
     margin-right: 0;
     padding-right: 0;
     border-right: none;
+}
+
+.bg-green{
+    background-color: #60B45A !important;
+}
+
+.text-green {
+    color: #60B45A !important;
 }
