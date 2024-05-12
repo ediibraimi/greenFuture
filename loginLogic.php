@@ -31,7 +31,7 @@ if (isset($_POST['submit'])) {
 				$_SESSION['email'] = $data['email'];
 				$_SESSION['phoneNumber'] = $data['phoneNumber'];
 
-				header('Location: index.php');
+				header('Location: savetheworld/index.php');
 			} else {
 				echo "The password is not valid";
 			}

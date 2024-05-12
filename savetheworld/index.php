@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>GreenHost - Web Hosting HTML Template</title>
+    <title>GreenFuture</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -14,7 +14,7 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -29,10 +29,73 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+    /* Style the form container */
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Style the form headings */
+form h3 {
+  font-size: 18px;
+  text-align: center;
+  
+}
+
+/* Style the form inputs */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="option"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Style the form button */
+button[name="submit"] {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Style the form button on hover */
+button[name="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Optional: Responsive design for smaller screens */
+@media (max-width: 600px) {
+  form {
+    max-width: 100%;
+  }
+}
+
+</style>
 </head>
 
 <body>
-    <div class="container-xxl bg-white p-0">
+    <div class="container-fluid bg-white p-0">
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
@@ -43,10 +106,10 @@
 
 
         <!-- Navbar & Hero Start -->
-        <div class="container-xxl position-relative p-0">
+        <div class="container-fluid position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
                 <a href="" class="navbar-brand p-0">
-                    <h1 class="m-0"><img src=""/>Save the world</h1>
+                    <h1 class="m-0"><img src="" />Save the world</h1>
                     <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -71,16 +134,47 @@
                 </div>
             </nav>
 
-            <div class="container-xxl py-5 bg-primary hero-header mb-5">
+            <div class="container-fluid py-5 bg-primary hero-header mb-5">
                 <div class="container my-5 py-5 px-lg-5">
                     <div class="row g-5">
                         <div class="col-lg-6 pt-5 text-center text-lg-start">
                             <h1 class="display-4 text-white mb-4 animated slideInLeft">Donate</h1>
                             <p class="text-white animated slideInLeft">Donate so we can make the world a better place.</p>
                             <h1 class="text-white mb-4 animated slideInLeft">
-                               
+
                             </h1>
-                            <a href="" class="btn btn-secondary py-sm-3 px-sm-5 me-3 animated slideInLeft">Donate!</a>
+                            <button class="btn btn-secondary py-sm-3 px-sm-5 me-3 animated slideInLeft" data-toggle="modal" data-target="#myModal">Donate!</button>
+                        </div>
+                        <div class="modal fade vertical-middle" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Donate</h4>
+                                        <i class="fa-solid fa-close" type="button" class="close" data-dismiss="modal"></i>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="DonatorLogic.php" method="POST">
+                                            
+                                            <input type="text" placeholder="Name" name="DonatorName" required/>
+                                            <input type="email" placeholder="Email" name="DonatorEmail" required/>
+                                            <input type="number" placeholder="Credit Card" name="DonatorCreditCard" required/>
+                                            <input type="number" placeholder="Phone Number" name="DonatorPhoneNum" required/>
+                                            <input type="number" placeholder="Price" name="DonatorPrice" required/>
+                                            <select name="DonatorOption" id="DonatorOption" required>
+                                                <option value="">Choose</option>
+                                                <option value="Nature">Nature</option>
+                                                <option value="Ocean">Ocean</option>
+                                                <option value="Polution">Polution</option>
+                                            </select>
+                                            
+
+
+                                            <button name="submit">Submit</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-lg-6 text-center text-lg-start">
                             <img class="img-fluid animated zoomIn" src="img/hero.png" alt="">
@@ -111,257 +205,8 @@
         <!-- Full Screen Search End -->
 
 
-        <!-- Domain Search Start -->
-        <div class="container-xxl domain mb-5" style="margin-top: 90px;">
-            <div class="container px-lg-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <div class="section-title position-relative text-center mx-auto mb-4 pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                            <h1 class="mb-3">Search Your Domain</h1>
-                            <p class="mb-1">Vero justo sed sed vero clita amet. Et justo vero sea diam elitr amet ipsum eos ipsum clita duo sed. Sed vero sea diam erat vero elitr sit clita.</p>
-                        </div>
-                        <div class="position-relative w-100 my-3 wow fadeInUp" data-wow-delay="0.3s">
-                            <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Enter your domain name">
-                            <button type="button" class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2">Search</button>
-                        </div>
-                        <div class="row g-3 wow fadeInUp" data-wow-delay="0.5s">
-                            <div class="col-lg-2 col-md-3 col-sm-4 col-6 text-center">
-                                <h5 class="fw-bold text-primary mb-1">.com</h5>
-                                <p class="mb-0">$9.99/year</p>
-                            </div>
-                            <div class="col-lg-2 col-md-3 col-sm-4 col-6 text-center">
-                                <h5 class="fw-bold text-primary mb-1">.net</h5>
-                                <p class="mb-0">$9.99/year</p>
-                            </div>
-                            <div class="col-lg-2 col-md-3 col-sm-4 col-6 text-center">
-                                <h5 class="fw-bold text-primary mb-1">.org</h5>
-                                <p class="mb-0">$9.99/year</p>
-                            </div>
-                            <div class="col-lg-2 col-md-3 col-sm-4 col-6 text-center">
-                                <h5 class="fw-bold text-primary mb-1">.us</h5>
-                                <p class="mb-0">$9.99/year</p>
-                            </div>
-                            <div class="col-lg-2 col-md-3 col-sm-4 col-6 text-center">
-                                <h5 class="fw-bold text-primary mb-1">.eu</h5>
-                                <p class="mb-0">$9.99/year</p>
-                            </div>
-                            <div class="col-lg-2 col-md-3 col-sm-4 col-6 text-center">
-                                <h5 class="fw-bold text-primary mb-1">.co.uk</h5>
-                                <p class="mb-0">$9.99/year</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Domain Search End -->
-
-
-        <!-- About Start -->
-        <div class="container-xxl py-5">
-            <div class="container px-lg-5">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="section-title position-relative mb-4 pb-4">
-                            <h1 class="mb-2">Welcome to GreenHost</h1>
-                        </div>
-                        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit clita duo justo magna dolore erat amet</p>
-                        <div class="row g-3">
-                            <div class="col-sm-4 wow fadeIn" data-wow-delay="0.1s">
-                                <div class="bg-light rounded text-center p-4">
-                                    <i class="fa fa-users-cog fa-2x text-primary mb-2"></i>
-                                    <h2 class="mb-1" data-toggle="counter-up">1234</h2>
-                                    <p class="mb-0">Experts</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 wow fadeIn" data-wow-delay="0.3s">
-                                <div class="bg-light rounded text-center p-4">
-                                    <i class="fa fa-users fa-2x text-primary mb-2"></i>
-                                    <h2 class="mb-1" data-toggle="counter-up">1234</h2>
-                                    <p class="mb-0">Clients</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 wow fadeIn" data-wow-delay="0.5s">
-                                <div class="bg-light rounded text-center p-4">
-                                    <i class="fa fa-check fa-2x text-primary mb-2"></i>
-                                    <h2 class="mb-1" data-toggle="counter-up">1234</h2>
-                                    <p class="mb-0">Projects</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-5">
-                        <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="img/about.png">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- About End -->
-
-
-        <!-- Pricing Start -->
-        <div class="container-xxl py-5">
-            <div class="container px-lg-5">
-                <div class="section-title position-relative text-center mx-auto mb-5 pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h1 class="mb-3">Our Hosting Plans</h1>
-                    <p class="mb-1">Vero justo sed sed vero clita amet. Et justo vero sea diam elitr amet ipsum eos ipsum clita duo sed. Sed vero sea diam erat vero elitr sit clita.</p>
-                </div>
-                <div class="row gy-5 gx-4">
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="position-relative shadow rounded border-top border-5 border-primary">
-                            <div class="d-flex align-items-center justify-content-center position-absolute top-0 start-50 translate-middle bg-primary rounded-circle" style="width: 45px; height: 45px; margin-top: -3px;">
-                                <i class="fa fa-share-alt text-white"></i>
-                            </div>
-                            <div class="text-center border-bottom p-4 pt-5">
-                                <h4 class="fw-bold">Share Hosting</h4>
-                                <p class="mb-0">Eirmod erat dolor amet est clita lorem erat justo rebum elitr eos</p>
-                            </div>
-                            <div class="text-center border-bottom p-4">
-                                <p class="text-primary mb-1">Latest Offer - <strong>Save 30%</strong></p>
-                                <h1 class="mb-3">
-                                    <small class="align-top" style="font-size: 22px; line-height: 45px;">$</small>2.49<small
-                                        class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Month</small>
-                                </h1>
-                                <a class="btn btn-primary px-4 py-2" href="">Buy Now</a>
-                            </div>
-                            <div class="p-4">
-                                <p class="border-bottom pb-3"><i class="fa fa-check text-primary me-3"></i>100 GB Disk Space</p>
-                                <p class="border-bottom pb-3"><i class="fa fa-check text-primary me-3"></i>Unlimited Bandwith</p>
-                                <p class="border-bottom pb-3"><i class="fa fa-check text-primary me-3"></i>Upgrade to Positive SSL</p>
-                                <p class="border-bottom pb-3"><i class="fa fa-check text-primary me-3"></i>Automatic Malware Removal</p>
-                                <p class="mb-0"><i class="fa fa-check text-primary me-3"></i>30 Days Money Back Guarantee</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="position-relative shadow rounded border-top border-5 border-secondary">
-                            <div class="d-flex align-items-center justify-content-center position-absolute top-0 start-50 translate-middle bg-secondary rounded-circle" style="width: 45px; height: 45px; margin-top: -3px;">
-                                <i class="fa fa-server text-white"></i>
-                            </div>
-                            <div class="text-center border-bottom p-4 pt-5">
-                                <h4 class="fw-bold">VPS Hosting</h4>
-                                <p class="mb-0">Eirmod erat dolor amet est clita lorem erat justo rebum elitr eos</p>
-                            </div>
-                            <div class="text-center border-bottom p-4">
-                                <p class="text-primary mb-1">Latest Offer - <strong>Save 30%</strong></p>
-                                <h1 class="mb-3">
-                                    <small class="align-top" style="font-size: 22px; line-height: 45px;">$</small>5.49<small
-                                        class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Month</small>
-                                </h1>
-                                <a class="btn btn-secondary px-4 py-2" href="">Buy Now</a>
-                            </div>
-                            <div class="p-4">
-                                <p class="border-bottom pb-3"><i class="fa fa-check text-primary me-3"></i>100 GB Disk Space</p>
-                                <p class="border-bottom pb-3"><i class="fa fa-check text-primary me-3"></i>Unlimited Bandwith</p>
-                                <p class="border-bottom pb-3"><i class="fa fa-check text-primary me-3"></i>Upgrade to Positive SSL</p>
-                                <p class="border-bottom pb-3"><i class="fa fa-check text-primary me-3"></i>Automatic Malware Removal</p>
-                                <p class="mb-0"><i class="fa fa-check text-primary me-3"></i>30 Days Money Back Guarantee</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="position-relative shadow rounded border-top border-5 border-primary">
-                            <div class="d-flex align-items-center justify-content-center position-absolute top-0 start-50 translate-middle bg-primary rounded-circle" style="width: 45px; height: 45px; margin-top: -3px;">
-                                <i class="fa fa-cog text-white"></i>
-                            </div>
-                            <div class="text-center border-bottom p-4 pt-5">
-                                <h4 class="fw-bold">Dedi Hosting</h4>
-                                <p class="mb-0">Eirmod erat dolor amet est clita lorem erat justo rebum elitr eos</p>
-                            </div>
-                            <div class="text-center border-bottom p-4">
-                                <p class="text-primary mb-1">Latest Offer - <strong>Save 30%</strong></p>
-                                <h1 class="mb-3">
-                                    <small class="align-top" style="font-size: 22px; line-height: 45px;">$</small>11.49<small
-                                        class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Month</small>
-                                </h1>
-                                <a class="btn btn-primary px-4 py-2" href="">Buy Now</a>
-                            </div>
-                            <div class="p-4">
-                                <p class="border-bottom pb-3"><i class="fa fa-check text-primary me-3"></i>100 GB Disk Space</p>
-                                <p class="border-bottom pb-3"><i class="fa fa-check text-primary me-3"></i>Unlimited Bandwith</p>
-                                <p class="border-bottom pb-3"><i class="fa fa-check text-primary me-3"></i>Upgrade to Positive SSL</p>
-                                <p class="border-bottom pb-3"><i class="fa fa-check text-primary me-3"></i>Automatic Malware Removal</p>
-                                <p class="mb-0"><i class="fa fa-check text-primary me-3"></i>30 Days Money Back Guarantee</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Pricing End -->
-
-
-        <!-- Comparison Start -->
-        <div class="container-xxl py-5">
-            <div class="container px-lg-5">
-                <div class="section-title position-relative text-center mx-auto mb-5 pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h1 class="mb-3">Shared VS Dedicated Server</h1>
-                    <p class="mb-1">Vero justo sed sed vero clita amet. Et justo vero sea diam elitr amet ipsum eos
-                        ipsum clita duo sed. Sed vero sea diam erat vero elitr sit clita.</p>
-                </div>
-                <div class="row g-5 comparison position-relative">
-                    <div class="col-lg-6 pe-lg-5">
-                        <div class="section-title position-relative mx-auto mb-4 pb-4">
-                            <h3 class="fw-bold mb-0">Shared Server</h3>
-                        </div>
-                        <div class="row gy-3 gx-5">
-                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
-                                <i class="fa fa-server fa-3x text-primary mb-3"></i>
-                                <h5 class="fw-bold">99.99% Uptime</h5>
-                                <p>Ipsum dolor diam stet stet kasd diam sea stet sed rebum dolor ipsum</p>
-                            </div>
-                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
-                                <i class="fa fa-shield-alt fa-3x text-primary mb-3"></i>
-                                <h5 class="fw-bold">100% Secured</h5>
-                                <p>Ipsum dolor diam stet stet kasd diam sea stet sed rebum dolor ipsum</p>
-                            </div>
-                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
-                                <i class="fa fa-cog fa-3x text-primary mb-3"></i>
-                                <h5 class="fw-bold">Control Panel</h5>
-                                <p>Ipsum dolor diam stet stet kasd diam sea stet sed rebum dolor ipsum</p>
-                            </div>
-                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.7s">
-                                <i class="fa fa-headset fa-3x text-primary mb-3"></i>
-                                <h5 class="fw-bold">24/7 Support</h5>
-                                <p>Ipsum dolor diam stet stet kasd diam sea stet sed rebum dolor ipsum</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 ps-lg-5">
-                        <div class="section-title position-relative mx-auto mb-4 pb-4">
-                            <h3 class="fw-bold mb-0">Dedicated Server</h3>
-                        </div>
-                        <div class="row gy-3 gx-5">
-                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
-                                <i class="fa fa-server fa-3x text-secondary mb-3"></i>
-                                <h5 class="fw-bold">99.99% Uptime</h5>
-                                <p>Ipsum dolor diam stet stet kasd diam sea stet sed rebum dolor ipsum</p>
-                            </div>
-                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
-                                <i class="fa fa-shield-alt fa-3x text-secondary mb-3"></i>
-                                <h5 class="fw-bold">100% Secured</h5>
-                                <p>Ipsum dolor diam stet stet kasd diam sea stet sed rebum dolor ipsum</p>
-                            </div>
-                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
-                                <i class="fa fa-cog fa-3x text-secondary mb-3"></i>
-                                <h5 class="fw-bold">Control Panel</h5>
-                                <p>Ipsum dolor diam stet stet kasd diam sea stet sed rebum dolor ipsum</p>
-                            </div>
-                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.7s">
-                                <i class="fa fa-headset fa-3x text-secondary mb-3"></i>
-                                <h5 class="fw-bold">24/7 Support</h5>
-                                <p>Ipsum dolor diam stet stet kasd diam sea stet sed rebum dolor ipsum</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Comparison Start -->
-
-
-        <!-- Testimonial Start -->
-        <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        -->
+        <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
             <div class="container px-lg-5">
                 <div class="owl-carousel testimonial-carousel">
                     <div class="testimonial-item position-relative bg-light border-top border-5 border-primary rounded p-4 my-4">
@@ -423,7 +268,7 @@
 
 
         <!-- Team Start -->
-        <div class="container-xxl py-5">
+        <div class="container-fluid py-5">
             <div class="container px-lg-5">
                 <div class="section-title position-relative text-center mx-auto mb-5 pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <h1 class="mb-3">Our Team Members</h1>
@@ -431,11 +276,11 @@
                         ipsum clita duo sed. Sed vero sea diam erat vero elitr sit clita.</p>
                 </div>
                 <div class="row g-4">
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="team-item border-top border-5 border-primary rounded shadow overflow-hidden">
                             <div class="text-center p-4">
                                 <img class="img-fluid rounded-circle mb-4" src="img/team-1.jpg" alt="">
-                                <h5 class="fw-bold mb-1">Full Name</h5>
+                                <h5 class="fw-bold mb-1">Albin Salihi</h5>
                                 <small>Designation</small>
                             </div>
                             <div class="d-flex justify-content-center bg-primary p-3">
@@ -445,11 +290,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                         <div class="team-item border-top border-5 border-primary rounded shadow overflow-hidden">
                             <div class="text-center p-4">
                                 <img class="img-fluid rounded-circle mb-4" src="img/team-2.jpg" alt="">
-                                <h5 class="fw-bold mb-1">Full Name</h5>
+                                <h5 class="fw-bold mb-1">Edi Ibraimi</h5>
                                 <small>Designation</small>
                             </div>
                             <div class="d-flex justify-content-center bg-primary p-3">
@@ -459,11 +304,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-item border-top border-5 border-primary rounded shadow overflow-hidden">
                             <div class="text-center p-4">
                                 <img class="img-fluid rounded-circle mb-4" src="img/team-3.jpg" alt="">
-                                <h5 class="fw-bold mb-1">Full Name</h5>
+                                <h5 class="fw-bold mb-1">Gerti Rexhepi</h5>
                                 <small>Designation</small>
                             </div>
                             <div class="d-flex justify-content-center bg-primary p-3">
@@ -473,25 +318,15 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="team-item border-top border-5 border-primary rounded shadow overflow-hidden">
-                            <div class="text-center p-4">
-                                <img class="img-fluid rounded-circle mb-4" src="img/team-4.jpg" alt="">
-                                <h5 class="fw-bold mb-1">Full Name</h5>
-                                <small>Designation</small>
-                            </div>
-                            <div class="d-flex justify-content-center bg-primary p-3">
-                                <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
+                    
+                            
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Team End -->
-        
+
 
         <!-- Footer Start -->
         <div class="container-fluid bg-primary text-white footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -550,10 +385,10 @@
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved. 
-							
-							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-							Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                            &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
+
+                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                            Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
                             </br>
                             Distributed By <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a>
                         </div>
@@ -577,8 +412,8 @@
     </div>
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>

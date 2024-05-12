@@ -6,8 +6,8 @@ include_once('config.php');
 if (isset($_POST['submit'])) {
 	$name = $_POST['name'];
 	$email = $_POST['email'];
-	$subject = $_POST['$subject'];
-	$messages = $_POST['$message'];
+	$subject = $_POST['subject'];
+	$message = $_POST['message'];
 	if (empty($name) || empty($email) || empty($subject)) {
 
 		echo "Please fill in all fields
@@ -26,6 +26,6 @@ if (isset($_POST['submit'])) {
 
 		$insertSql->execute();
 
-		header("Location: index.php");
+		header("Location: savetheworld/index.php");
 	}
 }
