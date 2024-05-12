@@ -8,13 +8,20 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to Green Future</h1>
         <nav>
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="about.php">About</a></li>
-                <li><a href="contact.php">Contact</a></li>
-            </ul>
+        <h1>Save the world</h1>
+        <li><a href="index.php"><img src="tt.png" width="50px" style="position: relative; float: left;"></a></li>
+        </nav>
+        
+        <nav>
+        
+                <ul class="button-list">
+           
+            <li><a href="about.php">About</a></li>
+            <li><a href="contact.php">Contact</a></li>
+            <li><a href="signin.php">Sign In</a></li>
+            <li><a href="signup.php">Sign Up</a></li>
+        </ul>
         </nav>
     </header>
 
