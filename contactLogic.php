@@ -1,40 +1,31 @@
-<?php 
-	session_start();
+<?php
+session_start();
 
-	include_once('config.php');
+include_once('config.php');
 
-	if(isset($_POST['submit']))
-	{
-		$name = $_POST['name'];
-		$email = $_POST['email'];
-        $subject = $_POST['$subject'];
-        $messages = $_POST['$message'];
-		if (empty($name) || empty($email) || empty($subject)) {
+if (isset($_POST['submit'])) {
+	$name = $_POST['name'];
+	$email = $_POST['email'];
+	$subject = $_POST['$subject'];
+	$messages = $_POST['$message'];
+	if (empty($name) || empty($email) || empty($subject)) {
 
-			echo "Please fill in all fields
+		echo "Please fill in all fields
 			";
+	} else {
 
-		}
-		else{
-			
-			$sql = "INSERT INTO contact(name,email,subject,messages) VALUES (:name, :email, :subject, :message)";
+		$sql = "INSERT INTO contact(name,email,subject,messages) VALUES (:name, :email, :subject, :message)";
 
-			$insertSql = $conn->prepare($sql);
-			
-
-			$insertSql->bindParam(':name', $name);
-			$insertSql->bindParam(':email', $email);
-			$insertSql->bindParam(':subject', $subject);
-			$insertSql->bindParam(':message', $message);
-         
-			$insertSql->execute();
-
-			header("Location: index.php");
-
-		}
+		$insertSql = $conn->prepare($sql);
 
 
+		$insertSql->bindParam(':name', $name);
+		$insertSql->bindParam(':email', $email);
+		$insertSql->bindParam(':subject', $subject);
+		$insertSql->bindParam(':message', $message);
+
+		$insertSql->execute();
+
+		header("Location: index.php");
 	}
-
-
- ?>
+}
